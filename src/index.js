@@ -3,31 +3,18 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import Home from "./pages/Home";
 
-import  { BrowserRouter, Switch, Route} from 'react-router-dom';
-import CadastroVideo from './pages/cadastro/Video';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import CadastroVideo from "./pages/cadastro/Video";
 
-function CadastroVideo() {
-  return (
-  <div>
-     Página de Cadastro de Vídeo
-</div>
-  )
-}
-
-const Página404 = () =>(<div>Pagina 404</div>)
+const Pagina404 = () => <div>Pagina 404</div>;
 
 ReactDOM.render(
-
- <BrowserRouter>
- <Switch>
-
- <Route path="/cadastro/video" component= {CadastroVideo} />
- <Route path="/cadastro/categoria" component= {CadastroCategoria} />
- <Route path="/" component= {Home} exact/>
- <Route component= {Pagina404} />
-
- </Switch>
-
- </BrowserRouter>,
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/cadastro/video" component={CadastroVideo} />
+      <Route path="/" component={Pagina404} />
+    </Switch>
+  </BrowserRouter>,
   document.getElementById("root")
 );
