@@ -1,21 +1,21 @@
-import React from "react";
-import VideoIframeResponsive from "./components/VideoIframeResponsive";
+import React from 'react'
+import VideoIframeResponsive from './components/VideoIframeResponsive'
 import {
   BannerMainContainer,
   ContentAreaContainer,
-  WatchButton,
-} from "./styles";
+  WatchButton
+} from './styles'
 
 function getYouTubeId(youtubeURL) {
   return youtubeURL.replace(
     /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-    "$7"
-  );
+    '$7'
+  )
 }
 
 export default function BannerMain({ videoTitle, videoDescription, url }) {
-  const youTubeID = getYouTubeId(url);
-  const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`;
+  const youTubeID = getYouTubeId(url)
+  const bgUrl = `https://img.youtube.com/vi/${youTubeID}/maxresdefault.jpg`
 
   return (
     <BannerMainContainer backgroundImage={bgUrl}>
@@ -34,5 +34,5 @@ export default function BannerMain({ videoTitle, videoDescription, url }) {
         </ContentAreaContainer.Item>
       </ContentAreaContainer>
     </BannerMainContainer>
-  );
+  )
 }
